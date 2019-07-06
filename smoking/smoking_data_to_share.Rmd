@@ -24,7 +24,7 @@ I copied and pasted from the orginal article to a google sheets because I didn't
 The URL for the data and table of interest is: https://www.thelancet.com/action/showFullTableHTML?isHtml=true&tableId=tbl1&pii=S0140-6736%2817%2930819-X
 The full article is: https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(17)30819-X/fulltext#
 Here's the graph that inspired me: http://cdn.static-economist.com/sites/default/files/imagecache/1872-width/20170415_WOC921.png
-Here's the tweet that started it all: 
+Here's the tweet that started it all: https://twitter.com/datawookie/status/1142042679351681025
 
 ```{r}
 data_from_lancet_key <- gs_key("1I8FKCUhb6WM-vNOL19inNAmWv0Guq_Q9dgdMVsquFOk")
