@@ -13,7 +13,7 @@ library(ggmap)
 library(googlesheets)
 library(ggrepel)
 ```
-
+# (expect a prompt to authenticate with Google in console)
 Note you will have to authenticate for the googlesheets package to work, but I have provided my google sheets keys listed below that should allow access to my google sheets. 
 
 Here's some help with googlesheets if needed: https://cran.r-project.org/web/packages/googlesheets/vignettes/basic-usage.html
