@@ -45,7 +45,21 @@ smoking <- smoking %>%
     change_female = female_2015 - female_1990
   )
 
-ggplot(smoking, aes(x = change_male, y = change_female)) +
+plot_1 <- ggplot(smoking, aes(x = change_male, y = change_female)) +
   scale_x_continuous(labels = percent) +
   scale_y_continuous(labels = percent) +
   geom_point()
+
+plot_2 <- ggplot(smoking, aes(x = change_male, y = change_female, label = country)) +
+  scale_x_continuous(labels = percent) +
+  scale_y_continuous(labels = percent) +
+  geom_point() +
+  theme_minimal() + 
+  geom_text_repel(data = subset(smoking, change_male > 0.065 | change_male < -0.15 | change_female >= 0.035 | change_female < -0.10 ),
+    segment.size  = 0.1,
+    segment.color = "grey50") +
+  geom_hline(yintercept=0) + 
+  geom_vline(xintercept=0) +
+  labs(title = "Change in Men's and Women's Smoking Prevalence from 1990 to 2015", subtitle = "Inspired from Twitter and The Economist", caption = "Data from The Lancet") + labs(x = "Change in Men's Prevalence", y = "Change in Women's Prevalence") + theme(legend.position = "none") + annotate("text", x = 0.065, y = 0.04, label = "Both up")  + annotate("text", x = -0.065, y = -0.11, label = "Both down") + annotate("text", x = 0.05, y = -0.11, label = "Men up, Women down") +  annotate("text", x = -0.05, y = 0.06, label = "Men down, Women up")
+
+
